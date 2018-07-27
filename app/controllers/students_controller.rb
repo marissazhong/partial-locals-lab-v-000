@@ -24,8 +24,8 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
-  def search(name)
-    @students = Student.find_by(name: name)
+  def index
+    @students = Student.where(params[:query])
   end
 
   def student_params
